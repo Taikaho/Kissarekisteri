@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane stylesheets="@kissala.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kissala.KissalanMuokkausController">
+   <children>
+      <GridPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="296.0" minWidth="10.0" prefWidth="213.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="387.0" minWidth="10.0" prefWidth="387.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" text="Muokkaa kissalan tietoja" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="id: " GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kissalan nimi: " GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kasvattajan etunimi: " GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kasvattajan sukunimi: " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Katuosoite: " GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Postinumero: " GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Paikkakunta: " GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="btnTallenna" minWidth="150.0" mnemonicParsing="false" onAction="#handleOK" text="Tallenna muutokset" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets right="40.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnPeru" minWidth="150.0" mnemonicParsing="false" onAction="#handleCancel" text="Peruuta" GridPane.halignment="LEFT" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+            </Button>
+            <TextField fx:id="tfId" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfKissalanNimi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfKasvattajanEnimi" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfKasvattajanSnimi" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfKatuosoite" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfPostinumero" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tfPaikkakunta" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label fx:id="labelVirhe" styleClass="virhe" text="" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>

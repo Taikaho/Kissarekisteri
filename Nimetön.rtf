@@ -1,0 +1,102 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNS-Bold;\f1\fnil\fcharset0 .SFNS-Regular;\f2\fnil\fcharset0 .SFNS-Heavy;
+}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18600\viewh15940\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 Verkkokauppa
+\f1\b0\fs28 \
+\
+Kyseess\'e4 on kivijalkana toimiva kauppa, jolla on Suomen suurin kalastusverkkovalikoima. Kalastusverkkojen myymisen lis\'e4ksi kaupalla on uniikkina palveluna verkkojen vuokrauspalvelu, jonka avulla verkkoja voidaan vuokrata eri pituisiksi ajoiksi. Vuokrauksen p\'e4\'e4tteeksi asiakas voi lunastaa verkon itselleen alennettuun hintaan. Lopullinen lunastushinta m\'e4\'e4r\'e4ytyy johdettuna attribuuttina vuokra-ajasta ja hinnasta. Jokaisen ostotapahtuman luo yrityksen ty\'f6ntekij\'e4. Ostotapahtuma toimii ylikohdetyyppin\'e4 alikohdetyypeille osto ja vuokraus.\
+\
+
+\f0\b\fs30 Kohteet
+\f1\b0\fs28 \
+\
+Tietokantaan mallinnetaan seuraavia asioita: asiakas, asiakkaan puhelin, ty\'f6ntekij\'e4, ty\'f6ntekij\'e4n puhelin, ostotapahtuma (vuokraus tai osto), tuote, tuotteiden tilaus, toimittaja, toimittajan puhelin ja maksu.\
+\
+
+\f2\b\fs26 Asiakas
+\f1\b0\fs28 : asiakastunnus, nimi, osoite, puhelinnumero, s\'e4hk\'f6posti, hetu\
+\
+
+\f2\b\fs26 Asiakkaan_puhelin
+\f1\b0\fs28 : asiakastunnus, puhelinnumero\
+\
+
+\f2\b\fs26 Ty\'f6ntekij\'e4
+\f1\b0\fs28 : id, nimi, katuosoite, postinumero, paikkakunta\
+\
+
+\f2\b\fs26 Ty\'f6ntekij\'e4n_puhelin
+\f1\b0\fs28 : id, puhelinnumero\
+\
+
+\f2\b\fs26 Ostotapahtuma
+\f1\b0\fs28 : ostotunnus, ty\'f6ntekij\'e4n_id, asiakastunnus, pvm\
+\
+
+\f2\b\fs26 Osto
+\f1\b0\fs28 : ostotunnus, hinta\
+\
+
+\f2\b\fs26 Vuokraus
+\f1\b0\fs28 : ostotunnus, vuokraushinta, vuokrausaika\
+\
+
+\f2\b\fs26 OstotapahtumaTuote
+\f1\b0\fs28 : ostotunnus, tuotekoodi, m\'e4\'e4r\'e4\
+\
+
+\f2\b\fs26 Tuote
+\f1\b0\fs28 : tuotekoodi, nimi, kuvaus, hinta, vuokraushinta, saldo\
+\
+
+\f2\b\fs26 TuoteTilaus
+\f1\b0\fs28 : tuotekoodi, tilausnumero, lukum\'e4\'e4r\'e4\
+\
+
+\f2\b\fs26 Tilaus
+\f1\b0\fs28 : tilausnumero, toimitusosoite, toimitustapa\
+\
+
+\f2\b\fs26 TilausToimittaja
+\f1\b0\fs28 : tilausnumero, toimittaja_id\
+\
+
+\f2\b\fs26 Toimittaja
+\f1\b0\fs28 : toimittaja_id, nimi, postinumero, katuosoite\
+\
+
+\f2\b\fs26 Toimittajan_puhelin
+\f1\b0\fs28 : toimittajan_id, puhelinnumero\
+\
+
+\f2\b\fs26 Maksu
+\f1\b0\fs28 : maksunumero, ostotunnus, summa, maksutapa, pvm\
+\
+
+\f0\b\fs30 Suhteet
+\f1\b0\fs28 \
+\
+\pard\tqr\tx100\tx260\li260\fi-260\sl324\slmult1\partightenfactor0
+\cf2 	
+\f0\b Asiakas
+\f1\b0  voi ostaa tai vuokrata tuotteita (ostotapahtuma).\
+	
+\f0\b Ty\'f6ntekij\'e4
+\f1\b0  luo ostotapahtuman.\
+	
+\f0\b Ostotapahtuma
+\f1\b0  voi sis\'e4lt\'e4\'e4 yhden tai useamman tuotteen (OstotapahtumaTuote).\
+	
+\f0\b Ostotapahtuma
+\f1\b0  voi olla joko osto tai vuokraus.\
+	
+\f0\b Tuotteet
+\f1\b0  tilataan toimittajalta (TuoteTilaus, TilausToimittaja).\
+	
+\f0\b Maksu
+\f1\b0  liittyy ostotapahtumaan.}

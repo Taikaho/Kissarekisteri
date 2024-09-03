@@ -1,0 +1,36 @@
+[
+{
+    ”Rekisterinumero”: 123456789,
+    "id": 321654987,
+    ”Nimi": ”Safiiri”,
+    ”Kutsumanimi”: ”Helmi",
+    ”Rotu”: ”Brittiläinen lyhytkarva”,
+    ”Veriryhmä”: ”A”,
+    "Kotiosoite": "Kissakuja 7",
+    "Postinumero": ”90100",
+    "Syntymäaika": "01.01.2020",
+    ”Isä”: ”Murinan - "Mese”,
+    ”Äiti”: ”Purinan - "Siru”,
+    ”Sijoitettu”: ”Kyllä”,
+    ”Pennut: ”Ei ole”,
+    ”FIV”: ”Negatiivinen”,
+    ”FeLV”: ”Negatiivinen”
+  },
+  {
+    ”Rekisterinumero”: 123456789,
+    ”id”: 6546546,
+    ”Nimi": ”Jaspis”,
+    ”Kutsumanimi”: ”Alma",
+    ”Rotu”: ”Brittiläinen lyhytkarva”,
+    ”Veriryhmä”: ”B”,
+    "Kotiosoite": "Kissakuja 7",
+    "Postinumero": ”90100",
+    "Syntymäaika": "01.01.2020",
+    ”Isä”: ”Murinan - "Mese”,
+    ”Äiti”: ”Purinan - "Siru”,
+    ”Sijoitettu”: ”Kyllä”,
+    ”Pennut: ”Ei ole”,
+    ”FIV”: ”Negatiivinen”,
+    ”FeLV”: ”Negatiivinen”
+  },
+]

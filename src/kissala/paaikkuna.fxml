@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import fi.jyu.mit.fxgui.ComboBoxChooser?>
+<?import fi.jyu.mit.fxgui.ListChooser?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kissala.KissalaGUIController">
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Hakuehto">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Label>
+                <ComboBoxChooser fx:id="cbKentta" prefWidth="150.0" onAction="#handleHakuehto"
+                                 rivit="Rekisterinumero&#10;id&#10;Nimi&#10;Kutsumanimi&#10;Rotu&#10;Veriryhmä&#10;
+Kotiosoite&#10;Postinumero&#10;Syntymäaika&#10;Isä&#10;Äiti&#10;Sijoitettu&#10;Pennut&#10;FIV&#10;FeLV" />
+                <TextField fx:id="tfHakukentta" promptText="Hakuehto" onKeyReleased="#handleHakuehto" />
+                <ListChooser fx:id="chooserKissat" prefHeight="400.0" prefWidth="78.0">
+                </ListChooser>
+                <Button mnemonicParsing="false" text="Uusi kissa" onAction="#handleUusiKissa">
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </VBox>
+    </left>
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Tiedosto">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Tallenna" onAction="#handleTallenna"/>
+                        <MenuItem mnemonicParsing="false" onAction="#avaa" text="Avaa"  />
+                        <MenuItem mnemonicParsing="false" text="Tulosta" onAction="#handleTulosta" />
+                        <MenuItem mnemonicParsing="false" text="Lopeta" onAction="#handleLopeta" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Muokkaa">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Lisää uusi kissa" onAction="#handleUusiKissa" />
+                        <MenuItem mnemonicParsing="false" text="Poista kissa" onAction="#handlePoistaKissa" />
+                        <MenuItem mnemonicParsing="false" text="Muokkaa kissan tietoja" onAction="#handleMuokkaaKissa" />
+                        <MenuItem mnemonicParsing="false" text="Muokkaa kissalan tietoja" onAction="#handleMuokkaaKissalaa" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Info">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Apua" onAction="#handleApua" />
+                        <MenuItem mnemonicParsing="false" text="Tietoja" onAction="#handleTietoja" />
+                        <MenuItem mnemonicParsing="false" text="Näytä kissalan tiedot" onAction="#handleKissalanTiedot" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10" BorderPane.alignment="CENTER">
+            <Label text="Kissan tiedot">
+                <VBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </VBox.margin>
+            </Label>
+            <ScrollPane fx:id="panelKissa">
+                <content>
+                    <AnchorPane>
+                        <children>
+                            <GridPane fx:id="gridKissa" layoutX="2.0" layoutY="7.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="7.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="Rekisterinumero">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="id" GridPane.rowIndex="1">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Kissalan id" GridPane.rowIndex="2">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Nimi" GridPane.rowIndex="3">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Kutsumanimi" translateZ="1.0" GridPane.rowIndex="4">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Rotu" GridPane.rowIndex="5">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Veriryhmä" GridPane.rowIndex="6">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Kotiosoite" GridPane.rowIndex="7">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Postinumero" GridPane.rowIndex="8">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Syntymäaika" GridPane.rowIndex="9">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Isä" GridPane.rowIndex="10">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Äiti" GridPane.rowIndex="11">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Sijoitettu" GridPane.rowIndex="12">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="Pennut" GridPane.rowIndex="13">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="FIV" GridPane.rowIndex="14">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <Label text="FeLV" GridPane.rowIndex="15">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0">>
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField  editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField  editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                    <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                                        <GridPane.margin>
+                                            <Insets left="10.0" />
+                                        </GridPane.margin>
+                                    </TextField>
+                                </children>
+                                <padding>
+                                    <Insets bottom="10.0" />
+                                </padding>
+                                <opaqueInsets>
+                                    <Insets />
+                                </opaqueInsets>
+                            </GridPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+                <VBox.margin>
+                    <Insets right="5.0" />
+                </VBox.margin>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

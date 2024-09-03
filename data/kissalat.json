@@ -1,0 +1,20 @@
+[
+  {
+    ”id”: 321654987,
+    ”Kissalan nimi": ”Sarellin”,
+    ”Kasvattajan etuniminimi”: "Matti",
+    ”Kasvattajan sukunimi”: "Meikäpoika",
+    ”Katuosoite”: ”Pörrökuja 2”,
+    ”Postinumero”: ”90500”,
+    ”Paikkakunta”: ”Oulu”,
+  },
+  {
+    ”id”: 6546546,
+    ”Kissalan nimi": ”Purinan”,
+    ”Kasvattajan etuniminimi”: "Sirkka",
+    ”Kasvattajan sukunimi”: "Meikätyttö",
+    ”Katuosoite”: ”Keskustakatu 23”,   
+    ”Postinumero”: ”90100”,
+    ”Paikkakunta”: ”Oulu”,
+  ...
+]
